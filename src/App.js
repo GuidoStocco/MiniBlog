@@ -4,8 +4,8 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 //  Pages
-import Home from "./pages/Home/Home";
 import About from './pages/About/About';
+import Home from './pages/home/Home';
 
 function App() {
   return (
