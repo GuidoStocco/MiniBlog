@@ -11,7 +11,7 @@ const Register = () => {
     const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
-        e.preventdefault();
+        e.preventDefault();
 
         setError("");
 
@@ -21,10 +21,11 @@ const Register = () => {
             password
         }
 
-        if(password ==! confirmPassword){
+        if(password !== confirmPassword){
             setError("As senhas precisam ser iguais!")
             return;
         }
+        console.log(user)
     }
 
     return(
@@ -38,25 +39,25 @@ const Register = () => {
                 <label>
                     <span>Nome:</span>
                     <input type="text" name='displayName' placeholder='Nome do usuário' required
-                    value={displayName} onChange={(e) => setDisplayName=(e.target.value)}/>
+                    value={displayName} onChange={(e) => setDisplayName(e.target.value)}/>
                 </label>
 
                 <label>
                     <span>E-mail:</span>
                     <input type="email" name='email' placeholder='Digite seu email' required
-                    value={email} onChange={(e) => setEmail=(e.target.value)}/>
+                    value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </label>
 
                 <label>
                     <span>Senha:</span>
                     <input type="password" name='password' placeholder='Digite sua senha' required
-                    value={password} onChange={(e) => setPassword=(e.target.value)}/>
+                    value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </label>
 
                 <label>
                     <span>Confirmação de senha:</span>
                     <input type="password" name='confirmPassword' placeholder='Confirme sua senha' required
-                    value={confirmPassword} onChange={(e) => setConfirmPassword=(e.target.value)}/>
+                    value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
                 </label>
                 <button className='btn'>Cadastrar</button>
                 {error && <p className='error'>{error}</p>}
